@@ -16,7 +16,7 @@ namespace ToDoList
             get
             {
                 if (showIncompleteOnly)
-                    return tasks.FindAll(task => !task.Completed);
+                    return tasks.FindAll(task => !task.Completed);      // shows the incomplete tasks
                 else
                     return tasks;
             }
@@ -60,8 +60,10 @@ namespace ToDoList
             {
                 MessageBox.Show("Please enter title and due date.");
             }
+        //If user has entered no title or date
         }
 
+        // resets the text boxes           
         private void ResetInputs()
         {
             txtTitle.Text = string.Empty;
@@ -81,7 +83,7 @@ namespace ToDoList
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tasks"));
         }
     }
-
+    // represents the task as title, description, due date and completion ststus
     public class Task
     {
         public string Title { get; set; }
